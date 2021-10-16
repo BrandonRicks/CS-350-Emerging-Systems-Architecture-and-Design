@@ -18,6 +18,7 @@ Much of the skills surrounding code structure, as well as my understanding of em
 ## How did you make this project maintainable, readable, and adaptable?
 Though I have a habit of sometimes overthinking a solution, I try to keep code clean and easy to follow whenever possible. This code could be adjusted relatively easily to alter the required output by adding or removing to the switch/case.
 
+
 # CS-350 Portfolio - Thermostat Project
 
 ## Summarize the project and what problem it was solving.
@@ -40,4 +41,5 @@ The code in this project is clean and easy to follow. I added a lot fo comments 
 
 ## Contact
 Brandon Ricks
+
 brandon.ricks@snhu.edu
