@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<Root>
+  <ImageBuilderProp IsTheDeviceSecure="true" StorageCapacityBytes="4194304">
+    <DevelopmentImage>
+      <DevMacAddress>f0:c7:7f:18:85:14</DevMacAddress>
+    </DevelopmentImage>
+    <RetToFactoryFlagsList>
+      <RetToFactoryFlag>RET_TO_IMAGE_HOST</RetToFactoryFlag>
+      <RetToFactoryFlag>RET_TO_DEFAULT_HOST</RetToFactoryFlag>
+      <RetToFactoryFlag>RET_TO_IMAGE_GPIO</RetToFactoryFlag>
+    </RetToFactoryFlagsList>
+  </ImageBuilderProp>
+  <CommandsSetList>
+    <CommandsSet>
+      <Command>
+        <CommandFormatStorage EraseStorage="false" SecurityAlertThreshold="15"/>
+      </Command>
+      <Command>
+        <CommandWriteCertificateStore SignatureFileName="E:/Coding/CCStudio IDE/simplelink_cc32xx_sdk_5_20_00_06\tools/cc32xx_tools/certificate-playground\certcatalogPlayGround20160911.lst.signed_3220.bin">
+          <FileLocation>E:/Coding/CCStudio IDE/simplelink_cc32xx_sdk_5_20_00_06\tools/cc32xx_tools/certificate-playground\certcatalogPlayGround20160911.lst</FileLocation>
+        </CommandWriteCertificateStore>
+      </Command>
+      <Command>
+        <CommandWriteServicePack ServicePackVersion="UCF_ROM">
+          <FileLocation>E:/Coding/CCStudio IDE/simplelink_cc32xx_sdk_5_20_00_06\tools/cc32xx_tools/servicepack-cc3x20\sp_3.20.0.1_2.7.0.0_2.2.0.7.bin</FileLocation>
+        </CommandWriteServicePack>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_IP_CONFIG</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\ipcfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_DEVICE_NAME</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\device.name.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_AP</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\ap.cfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_HTTP_SRV</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\httpsrv.cfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_DHCP_SRV</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\dhcpsrv.cfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_STA_CONFIG</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\sta.cfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteSystemFile>
+          <SystemFileId>CONFIG_TYPE_MODE</SystemFileId>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys\mode.cfg.bin</FileLocation>
+        </CommandWriteSystemFile>
+      </Command>
+      <Command>
+        <CommandWriteFile>
+          <FileSystemName>@@.tmp</FileSystemName>
+          <MaxFileSize>255</MaxFileSize>
+          <FileLocation>E:/Coding/CCStudio IDE/simplelink_cc32xx_sdk_5_20_00_06\source/ti/drivers/net/imagecreator/files\tmp.tmp</FileLocation>
+        </CommandWriteFile>
+      </Command>
+      <Command>
+        <CommandWriteFile>
+          <FileSystemName>dummy-root-ca-cert</FileSystemName>
+          <FileOpenFlagsList/>
+          <MaxFileSize>975</MaxFileSize>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\dummy-root-ca-cert</FileLocation>
+        </CommandWriteFile>
+      </Command>
+      <Command>
+        <CommandWriteFile CertificationFileName="dummy-root-ca-cert" SignatureFileName="E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys/mcuimg.bin.bin">
+          <FileSystemName>/sys/mcuimg.bin</FileSystemName>
+          <FileOpenFlagsList>
+            <FileOpenFlag>FILE_OPEN_FLAG_FAILSAFE</FileOpenFlag>
+            <FileOpenFlag>FILE_OPEN_FLAG_PUBLIC_WRITE</FileOpenFlag>
+            <FileOpenFlag>FILE_OPEN_FLAG_SECURE</FileOpenFlag>
+          </FileOpenFlagsList>
+          <MaxFileSize>262144</MaxFileSize>
+          <FileLocation>E:/Coding/CCStudio IDE/workspace/ThermostatProject/MCU+Image/syscfg\sl_fs\sys/mcuimg.bin</FileLocation>
+        </CommandWriteFile>
+      </Command>
+      <Command>
+        <CommandWriteFile>
+          <FileSystemName>/tmp/CrashMiniDump.bin</FileSystemName>
+          <MaxFileSize>24576</MaxFileSize>
+          <FileLocation>E:/Coding/CCStudio IDE/simplelink_cc32xx_sdk_5_20_00_06\source/ti/drivers/net/imagecreator/files\CrashMiniDump.bin</FileLocation>
+        </CommandWriteFile>
+      </Command>
+    </CommandsSet>
+  </CommandsSetList>
+</Root>

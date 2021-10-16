@@ -1,0 +1,65 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --board "/ti/boards/CC3220S_LAUNCHXL" --product "simplelink_cc32xx_sdk@5.20.00.06"
+ * @versions {"data":"2021031521","timestamp":"2021031521","tool":"1.8.0+1863","templates":null}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO   = scripting.addModule("/ti/drivers/GPIO");
+const GPIO1  = GPIO.addInstance();
+const GPIO2  = GPIO.addInstance();
+const GPIO3  = GPIO.addInstance();
+const I2C    = scripting.addModule("/ti/drivers/I2C", {}, false);
+const I2C1   = I2C.addInstance();
+const RTOS   = scripting.addModule("/ti/drivers/RTOS");
+const Timer  = scripting.addModule("/ti/drivers/Timer", {}, false);
+const Timer1 = Timer.addInstance();
+const UART   = scripting.addModule("/ti/drivers/UART", {}, false);
+const UART1  = UART.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.$hardware = system.deviceData.board.components.SW2;
+GPIO1.mode      = "Dynamic";
+GPIO1.$name     = "CONFIG_GPIO_BUTTON_0";
+
+GPIO2.$hardware = system.deviceData.board.components.SW3;
+GPIO2.mode      = "Dynamic";
+GPIO2.$name     = "CONFIG_GPIO_BUTTON_1";
+
+GPIO3.$hardware = system.deviceData.board.components.LED_RED;
+GPIO3.$name     = "CONFIG_GPIO_LED_0";
+
+I2C1.$name              = "CONFIG_I2C_0";
+I2C1.$hardware          = system.deviceData.board.components.LP_I2C;
+I2C1.i2c.sdaPin.$assign = "boosterpack.10";
+
+const Power          = scripting.addModule("/ti/drivers/Power", {}, false);
+Power.parkPins.$name = "ti_drivers_power_PowerCC32XXPins0";
+
+RTOS.name = "NoRTOS";
+
+Timer1.$name     = "CONFIG_TIMER_0";
+Timer1.timerType = "32 Bits";
+
+UART1.$name     = "CONFIG_UART_0";
+UART1.$hardware = system.deviceData.board.components.XDS110UART;
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+GPIO1.gpioPin.$suggestSolution    = "boosterpack.3";
+GPIO2.gpioPin.$suggestSolution    = "boosterpack.11";
+GPIO3.gpioPin.$suggestSolution    = "boosterpack.29";
+I2C1.i2c.$suggestSolution         = "I2C0";
+I2C1.i2c.sclPin.$suggestSolution  = "boosterpack.9";
+Timer1.timer.$suggestSolution     = "Timer0";
+UART1.uart.$suggestSolution       = "UART0";
+UART1.uart.txPin.$suggestSolution = "55";
+UART1.uart.rxPin.$suggestSolution = "57";

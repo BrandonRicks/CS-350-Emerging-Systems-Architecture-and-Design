@@ -1,0 +1,36 @@
+digraph Model
+{
+    graph[rankdir=LR]
+
+    // mod.$name=/ti/devices/DriverLib
+
+    // mod.$name=/ti/dpl/Settings
+
+    // mod.$name=/ti/drivers/Board
+    ti_drivers_Board -> ti_devices_DriverLib
+    ti_drivers_Board -> ti_dpl_Settings
+
+    // mod.$name=/ti/drivers/GPIO
+    ti_drivers_GPIO -> ti_drivers_Power
+    ti_drivers_GPIO -> ti_drivers_Board
+
+    // mod.$name=/ti/drivers/I2C
+    CONFIG_I2C_0 -> ti_drivers_Power
+    CONFIG_I2C_0 -> ti_drivers_Board
+
+    // mod.$name=/ti/drivers/Power
+    ti_drivers_Power -> ti_drivers_Board
+    ti_drivers_Power -> ti_drivers_power_PowerCC32XXPins0
+
+    // mod.$name=/ti/drivers/RTOS
+
+    // mod.$name=/ti/drivers/Timer
+    CONFIG_TIMER_0 -> ti_drivers_Power
+    CONFIG_TIMER_0 -> ti_drivers_Board
+
+    // mod.$name=/ti/drivers/UART
+    CONFIG_UART_0 -> ti_drivers_Power
+    CONFIG_UART_0 -> ti_drivers_Board
+
+    // mod.$name=/ti/drivers/power/PowerCC32XXPins
+}

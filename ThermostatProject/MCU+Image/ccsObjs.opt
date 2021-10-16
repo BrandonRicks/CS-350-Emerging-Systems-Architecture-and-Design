@@ -1,0 +1,1 @@
+"./gpiointerrupt.obj" "./syscfg/ti_drivers_config.obj" "./main_nortos.obj" "../cc32xxs_nortos.cmd" -lti_utils_build_linker.cmd.genlibs -l"ti/devices/cc32xx/driverlib/ccs/Release/driverlib.a" -llibc.a 
